@@ -74,7 +74,7 @@ public class NacosRegistryServiceImpl implements RegistryService<EventListener> 
     private static final String PUBLIC_NAMING_ADDRESS_PREFIX = "public_";
     private static final String PUBLIC_NAMING_SERVICE_META_IP_KEY = "publicIp";
     private static final String PUBLIC_NAMING_SERVICE_META_PORT_KEY = "publicPort";
-    private static final Configuration FILE_CONFIG = ConfigurationFactory.CURRENT_FILE_INSTANCE;
+    private static final Configuration FILE_CONFIG = ConfigurationFactory.getInstance();
     private static volatile NamingService naming;
     private static final ConcurrentMap<String, List<EventListener>> LISTENER_SERVICE_MAP = new ConcurrentHashMap<>();
     private static final ConcurrentMap<String, List<InetSocketAddress>> CLUSTER_ADDRESS_MAP = new ConcurrentHashMap<>();

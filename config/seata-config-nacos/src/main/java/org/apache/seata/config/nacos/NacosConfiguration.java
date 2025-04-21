@@ -105,7 +105,11 @@ public class NacosConfiguration extends AbstractConfiguration {
 
     @Override
     public String getLatestConfig(String dataId, String defaultValue, long timeoutMills) {
-        String value = seataConfig.getProperty(dataId);
+        Object object = seataConfig.get(dataId);
+        String value = null;
+        if(object != null) {
+            value = object.toString();
+        }
         if (null == value) {
             try {
                 value = configService.getConfig(dataId, getNacosGroup(), timeoutMills);
